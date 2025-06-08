@@ -1,0 +1,22 @@
+{
+	"templates_page": {
+		"title": "Message templates",
+		"brand": "Brand",
+		"search_template": "Search template",
+		"add_new_template": "Add new template",
+		"name": "Template name",
+		"content": "Template content",
+		"template_list": "Template list",
+		"created_at": "Created at",
+		"add_template_modal": {
+			"title": "Add message template"
+		},
+		"edit_template_modal": {
+			"title": "Edit message template"
+		},
+        "delete_template_modal": {
+			"title": "Delete message template",
+			"message": "Are you sure you want to delete this message template? This action cannot be undone."
+		}
+	}
+}

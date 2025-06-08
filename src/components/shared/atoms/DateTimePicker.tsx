@@ -42,13 +42,12 @@ const DateTimePicker = ({
 	// State
 	const [date, setDate] = useState<Date | undefined>(time ? new Date(`${time}`) : new Date());
 	const [timeValue, setTimeValue] = useState<string>("");
-	console.log("🚀 ~ time:", time)
 
 	const valueLabel = useMemo(() => {
-		if (!date) return "Pick a date";
+		if (!date) return t("filter_component.pick_date");
 		setTimeValue(format(date, "HH:mm"));
 		return `${format(date, "dd/MM/yyyy HH:mm")}`;
-	}, [date]);
+	}, [date, t]);
 
 	/**
 	 * Handle Time Change
@@ -124,19 +123,19 @@ const DateTimePicker = ({
 			<Popover>
 				<PopoverTrigger
 					className={clsx(
-						"btn px-2.5 min-w-[15.5rem] bg-white border-gray-200 justify-between group",
-						"dark:border-surface-400/30 dark:hover:border-gray-600 dark:bg-gray-800",
+						"btn group min-w-[15.5rem] justify-between border-gray-200 bg-white px-2.5",
+						"dark:border-surface-400/30 dark:bg-gray-800 dark:hover:border-gray-600",
 						"hover:border-gray-300 hover:text-gray-800",
 						{
 							"text-muted-foreground": !date,
-							"!border-danger-500 focus:!border-danger-500 hover:!border-danger-300 dark:!border-danger-500":
+							"!border-danger-500 hover:!border-danger-300 focus:!border-danger-500 dark:!border-danger-500":
 								errorMessage,
 						}
 					)}
 				>
-					<div className="flex items-center font-medium text-left text-gray-600 group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-100">
+					<div className="flex items-center text-left font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-100">
 						<svg
-							className="fill-current text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-100 ml-1 mr-2"
+							className="ml-1 mr-2 fill-current text-gray-400 group-hover:text-gray-600 dark:text-gray-500 dark:group-hover:text-gray-100"
 							width="16"
 							height="16"
 							viewBox="0 0 16 16"
@@ -149,7 +148,7 @@ const DateTimePicker = ({
 					<XCircle
 						size={14}
 						className={clsx(
-							"text-danger-400 dark:text-danger-500 hover:text-danger-600 dark:hover:text-danger-300",
+							"text-danger-400 hover:text-danger-600 dark:text-danger-500 dark:hover:text-danger-300",
 							{ invisible: !date }
 						)}
 						onClick={handleClearDate}
@@ -194,8 +193,8 @@ const DateTimePicker = ({
 							footer: "text-xs font-semibold",
 						}}
 						footer={
-							<div className="flex gap-2 items-center">
-								<label htmlFor="time-input">Set the time:</label>
+							<div className="flex items-center gap-2">
+								<label htmlFor="time-input">{t("filter_component.set_time")}:</label>
 								<input
 									id="time-input"
 									type="time"

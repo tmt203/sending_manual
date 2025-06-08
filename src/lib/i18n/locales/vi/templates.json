@@ -1,0 +1,22 @@
+{
+	"templates_page": {
+		"title": "Mẫu tin nhắn",
+		"brand": "Thương hiệu",
+		"search_template": "Tìm kiếm mẫu tin nhắn",
+		"add_new_template": "Thêm mẫu tin nhắn",
+		"name": "Tên mẫu tin nhắn",
+		"content": "Nội dung mẫu tin nhắn",
+		"template_list": "Danh sách mẫu tin nhắn",
+        "created_at": "Ngày tạo",
+		"add_template_modal": {
+			"title": "Thêm mẫu tin nhắn"
+		},
+		"edit_template_modal": {
+			"title": "Chỉnh sửa mẫu tin nhắn"
+		},
+		"delete_template_modal": {
+			"title": "Xóa mẫu tin nhắn",
+			"message": "Bạn có chắc chắn muốn xóa mẫu tin nhắn này? Hành động này không thể hoàn tác."
+		}
+	}
+}
