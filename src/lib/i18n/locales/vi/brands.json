@@ -1,0 +1,23 @@
+{
+	"brands_page": {
+		"title": "Thương hiệu",
+		"brand_list": "Danh sách thương hiệu",
+		"name": "Tên thương hiệu",
+		"search_placeholder": "Tìm kiếm thương hiệu...",
+		"selected_brand": "{number} thương hiệu được chọn",
+		"no_results": "Không tìm thấy thương hiệu nào phù hợp với tiêu chí tìm kiếm của bạn.",
+		"description": "Mô tả thương hiệu",
+		"add_new_brand": "Thêm thương hiệu",
+		"search_brand": "Tìm kiếm thương hiệu",
+		"channel": "Kênh gửi",
+		"add_brand_modal": {
+			"title": "Thêm thương hiệu"
+		},
+		"delete_brand_modal": {
+			"title": "Xóa thương hiệu",
+			"message": "Bạn có chắc chắn muốn xóa thương hiệu này? Hành động này không thể hoàn tác.",
+			"confirm_button": "Xóa thương hiệu",
+			"cancel_button": "Hủy"
+		}
+	}
+}

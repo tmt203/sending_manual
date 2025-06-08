@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+/* Additional styles */
+@import "additional-styles/utility-patterns.css";
+@import "additional-styles/scrollbar.css";
+@import "tailwindcss/utilities";
+
+@layer base {
+	body {
+		@apply text-base;
+	}
+}
