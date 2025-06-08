@@ -1,8 +1,8 @@
 import BrandsPage from "@components/shared/pages/brands/BrandsPage";
 
 export const metadata = {
-    title: "SNS - Brands",
-    description: "Manage your brands",
+    title: "SNS - Thương hiệu",
+    description: "Quản lý thương hiệu",
 };
 
 /**
