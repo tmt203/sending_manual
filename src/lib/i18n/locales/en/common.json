@@ -99,7 +99,9 @@
 		"script": "Script",
 		"brand_template": "Brand Name & Template",
 		"unit_user": "Unit & User",
-		"role": "Role"
+		"role": "Role",
+		"brands": "Manage Brands",
+		"templates": "Manage Message Templates"
 	},
 	"profile": {
 		"account_info": "Account Info",
@@ -131,6 +133,7 @@
 		"required": "This field is required",
 		"min_length": "This field must be at least {data} characters",
 		"max_length": "This field must be at most {data} characters",
-		"invalid_value": "This field is invalid"
+		"invalid_value": "This field is invalid",
+		"duplicate_value": "Data {data} already exists"
 	}
 }

@@ -113,7 +113,9 @@
 		"script": "Kịch bản gửi tin",
 		"brand_template": "Thương hiệu & Mẫu tin nhắn",
 		"unit_user": "Đơn vị và người dùng",
-		"role": "Phân quyền"
+		"role": "Phân quyền",
+		"brands": "Quản lý thương hiệu",
+		"templates": "Quản lý mẫu tin nhắn"
 	},
 	"profile": {
 		"account_info": "Thông tin tài khoản",
@@ -123,6 +125,7 @@
 		"required": "Thông tin này không được bỏ trống",
 		"min_length": "Thông tin này phải có ít nhất {data} ký tự",
 		"max_length": "Thông tin này không được vượt quá {data} ký tự",
-		"invalid_value": "Thông tin này không hợp lệ"
+		"invalid_value": "Thông tin này không hợp lệ",
+		"duplicate_value": "Dữ liệu {data} đã tồn tại"
 	}
 }

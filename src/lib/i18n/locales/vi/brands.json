@@ -15,9 +15,7 @@
 		},
 		"delete_brand_modal": {
 			"title": "Xóa thương hiệu",
-			"message": "Bạn có chắc chắn muốn xóa thương hiệu này? Hành động này không thể hoàn tác.",
-			"confirm_button": "Xóa thương hiệu",
-			"cancel_button": "Hủy"
+			"message": "Bạn có chắc chắn muốn xóa thương hiệu này? Hành động này không thể hoàn tác."
 		}
 	}
 }

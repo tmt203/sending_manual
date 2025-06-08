@@ -13,32 +13,20 @@ export interface AppLayoutTemplateProps {
 const AppLayoutTemplate = ({ children }: AppLayoutTemplateProps) => {
 	const menu: SidebarMenu[] = [
 		{
-			groupName: "sidebar.dashboard",
-			groups: [
-				{
-					icon: "CircleGauge",
-					id: "dashboard",
-					groupId: "dashboard",
-					label: "sidebar.dashboard",
-					href: "/dashboard",
-				},
-			],
-		},
-		{
 			groupName: "sidebar.operation",
 			groups: [
 				{
 					icon: "UserRound",
 					id: "customers",
 					groupId: "customers",
-					label: "sidebar.customers",
+					label: "sidebar.brands",
 					href: "/brands",
 				},
 				{
 					icon: "Rocket",
 					id: "campaign",
 					groupId: "campaign",
-					label: "sidebar.campaigns",
+					label: "sidebar.templates",
 					href: "/templates",
 				},
 				{
