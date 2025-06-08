@@ -19,7 +19,7 @@ import {
 import { DateRange } from "react-day-picker";
 import { Icon } from "../atoms";
 import RangeDatePicker from "../atoms/RangeDatePicker";
-import { FilterItemConfig } from "./Filter";
+import { FilterItemConfig } from "./FilterItem";
 
 export interface FilterDrawerProps {
 	id: string;
