@@ -1,0 +1,19 @@
+{
+	"sending_manual_page": {
+		"title": "Gửi tin thủ công",
+		"channel": "Kênh gửi",
+		"brand": "Thương hiệu",
+		"template": "Mẫu tin nhắn",
+		"brand_list": "Danh sách thương hiệu",
+		"template_list": "Danh sách mẫu tin nhắn",
+		"add_receiver": "Thêm người nhận",
+		"receiver_information": "Thông tin người nhận",
+		"send_success": "Gửi tin thành công!",
+		"send_failed": "Gửi tin thất bại. Hãy thử lại!",
+		"reset": "Đặt lại",
+		"send": "Gửi",
+		"sms": "SMS",
+		"zns": "ZNS",
+		"email": "Email"
+	}
+}

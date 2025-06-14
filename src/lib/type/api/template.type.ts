@@ -1,7 +1,9 @@
 import { AuditInfo, Param } from "@type/common.type";
 
 export type TemplateQueryParams = {
+	id?: string;
 	name?: string;
+	brand_id?: string;
 } & Param;
 
 export type TemplateBody = {

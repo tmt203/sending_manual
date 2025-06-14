@@ -1,6 +1,7 @@
 {
 	"keyword": "Keyword",
 	"sync_data": "Sync data",
+	"phone_number": "Phone number",
 	"title": {
 		"dashboard": "Dashboard",
 		"unit_user": "Unit & User",

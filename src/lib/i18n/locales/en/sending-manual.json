@@ -1,0 +1,19 @@
+{
+	"sending_manual_page": {
+		"title": "Sending manual",
+		"channel": "Channel",
+		"brand": "Brand",
+		"template": "Template",
+		"brand_list": "Brand list",
+		"template_list": "Template list",
+		"add_receiver": "Add receiver",
+		"receiver_information": "Receiver information",
+		"send_success": "Send message successfully!",
+		"send_failed": "Send message failed. Please try again!",
+		"reset": "Reset",
+		"send": "Send",
+		"sms": "SMS",
+		"zns": "ZNS",
+		"email": "Email"
+	}
+}
