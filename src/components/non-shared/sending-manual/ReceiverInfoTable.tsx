@@ -1,7 +1,7 @@
 import { Button, InputForm } from "@components/shared/molecules";
 import { AlignJustify, PlusCircle, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 
 export interface RowData {
 	id: string;
@@ -74,7 +74,7 @@ const ReceiverInfoTable = ({ params, rows, setRows }: ReceiverInfoTableProps) =>
 		};
 		setRows([...rows, newRow]);
 	}, [params, rows, setRows]);
-	
+
 	return (
 		<div className="flex flex-col gap-2">
 			{/* Area: Title */}

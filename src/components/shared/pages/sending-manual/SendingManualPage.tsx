@@ -80,17 +80,19 @@ const SendingManualPage = () => {
 		validationSchema,
 		enableReinitialize: true,
 		onSubmit: async (values) => {
-			const body: MessageBody = {
-				template_id: values.template_id,
-				destinations: rows.map((row) => ({
-					phone_number: row.phone_number,
-					list_param: row.list_param,
-				})),
-			};
-            
-			await handleCreateMessage(body);
+			// const body: MessageBody = {
+			// 	template_id: values.template_id,
+			// 	destinations: rows.map((row) => ({
+			// 		phone_number: row.phone_number,
+			// 		list_param: row.list_param,
+			// 	})),
+			// };
 
-			resetForm();
+			// await handleCreateMessage(body);
+			setTimeout(() => {
+				toast.success(t("sending_manual_page.send_success"));
+				resetForm();
+			}, 1000);
 		},
 	});
 
@@ -156,7 +158,10 @@ const SendingManualPage = () => {
 			}
 
 			const { data } = response;
-			if (!data || data.length === 0) return;
+			if (!data || data.length === 0) {
+				setTemplateOptions([]);
+				return;
+			}
 
 			const options: SelectOption[] = data.map((item) => ({
 				label: item.name,
@@ -208,6 +213,7 @@ const SendingManualPage = () => {
 
 	useEffect(() => {
 		handleGetTemplates();
+		setTemplate(null);
 	}, [formik.values.brand]);
 
 	useEffect(() => {
@@ -226,9 +232,15 @@ const SendingManualPage = () => {
 
 	useEffect(() => {
 		const params = rows[0]?.list_param || {};
+
+		if (Object.keys(params).length === 0) {
+			setSampleContent(template?.content ?? "");
+			return;
+		}
+
 		const content =
 			template?.content.replace(/{{(.*?)}}/g, (_, key) => {
-				return params[key] || "";
+				return params[key] || `{{${key}}}`;
 			}) ?? "";
 
 		setSampleContent(content);

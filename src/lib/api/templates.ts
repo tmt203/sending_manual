@@ -24,7 +24,6 @@ export const apiGetTemplates = async (params: TemplateQueryParams) => {
  */
 export const apiGetTemplateById = async (id: string) => {
     return await apiGet<ApiResponse<Template>>({
-        params: { id },
         token: "",
         url: `${SUB_PATH}/${id}`,
     });

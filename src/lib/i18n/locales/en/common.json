@@ -2,6 +2,9 @@
 	"keyword": "Keyword",
 	"sync_data": "Sync data",
 	"phone_number": "Phone number",
+	"back_to_sending_manual": "Back",
+	"page_not_found": "Page not found",
+	"page_not_found_description": "Hmm... this page doesn't exist. Please check the path again!",
 	"title": {
 		"dashboard": "Dashboard",
 		"unit_user": "Unit & User",
