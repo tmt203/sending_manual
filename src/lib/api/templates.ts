@@ -18,6 +18,18 @@ export const apiGetTemplates = async (params: TemplateQueryParams) => {
 };
 
 /**
+ * Api get template by id
+ * @param id string
+ * @returns ApiResponse<Template>
+ */
+export const apiGetTemplateById = async (id: string) => {
+    return await apiGet<ApiResponse<Template>>({
+        token: "",
+        url: `${SUB_PATH}/${id}`,
+    });
+};
+
+/**
  * Api create template
  * @param body TemplateBody
  * @returns ApiResponse<Template>

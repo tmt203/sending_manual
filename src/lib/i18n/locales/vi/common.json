@@ -1,6 +1,10 @@
 {
 	"keyword": "Từ khóa",
 	"sync_data": "Đồng bộ dữ liệu",
+	"phone_number": "Số điện thoại",
+	"back_to_sending_manual": "Quay lại",
+	"page_not_found": "Trang không tìm thấy",
+	"page_not_found_description": "Hmm... trang này không tồn tại. Hãy kiểm tra lại đường dẫn nhé!",
 	"title": {
 		"dashboard": "Trang chủ",
 		"unit_user": "Đơn vị và người dùng",

@@ -34,7 +34,7 @@ const AppLayoutTemplate = ({ children }: AppLayoutTemplateProps) => {
 					id: "send_manual",
 					groupId: "send_manual",
 					label: "sidebar.send_manual",
-					href: "/manual",
+					href: "/sending-manual",
 				},
 			],
 		},

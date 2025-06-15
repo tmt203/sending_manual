@@ -1,9 +1,17 @@
+export const metadata = {
+	title: "Page Not Found",
+	description: "The page you are looking for does not exist.",
+}
+
 import NotFoundImageDark from "@/public/images/404-illustration-dark.svg";
 import NotFoundImage from "@/public/images/404-illustration.svg";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const NotFound = () => {
+	const t = useTranslations();
+
 	return (
 		<div className="flex h-[100dvh] overflow-hidden">
 			{/* Content area */}
@@ -29,14 +37,12 @@ const NotFound = () => {
 											alt="404 illustration dark"
 										/>
 									</div>
-									<div className="mb-6">
-										Hmm...this page doesn't exist. Try searching for something else!
-									</div>
+									<div className="mb-6">{t("page_not_found_description")}</div>
 									<Link
-										href="/sns/dashboard"
+										href="/sending-manual"
 										className="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white"
 									>
-										Back To Dashboard
+										{t("back_to_sending_manual")}
 									</Link>
 								</div>
 							</div>
