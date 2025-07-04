@@ -69,6 +69,8 @@ const SendingManualPage = () => {
 			}
 
 			toast.success(t("sending_manual_page.send_success"));
+
+			resetForm();
 		} catch (error) {
 			toast.error(t("sending_manual_page.send_failed"));
 		}
@@ -80,19 +82,19 @@ const SendingManualPage = () => {
 		validationSchema,
 		enableReinitialize: true,
 		onSubmit: async (values) => {
-			// const body: MessageBody = {
-			// 	template_id: values.template_id,
-			// 	destinations: rows.map((row) => ({
-			// 		phone_number: row.phone_number,
-			// 		list_param: row.list_param,
-			// 	})),
-			// };
+			const body: MessageBody = {
+				template_id: values.template_id,
+				destinations: rows.map((row) => ({
+					phone_number: row.phone_number,
+					list_param: row.list_param,
+				})),
+			};
 
-			// await handleCreateMessage(body);
-			setTimeout(() => {
-				toast.success(t("sending_manual_page.send_success"));
-				resetForm();
-			}, 1000);
+			await handleCreateMessage(body);
+			// setTimeout(() => {
+			// 	toast.success(t("sending_manual_page.send_success"));
+			// 	resetForm();
+			// }, 1000);
 		},
 	});
 
