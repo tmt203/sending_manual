@@ -17,6 +17,9 @@
 		"delete_template_modal": {
 			"title": "Xóa mẫu tin nhắn",
 			"message": "Bạn có chắc chắn muốn xóa mẫu tin nhắn này? Hành động này không thể hoàn tác."
+		},
+		"error_message": {
+			"template_params_duplicate": "Các tham số trong mẫu tin nhắn không được trùng lặp."
 		}
 	}
 }

@@ -51,3 +51,18 @@ export const formatThousands = (value: number): string =>
 		maximumSignificantDigits: 3,
 		notation: "compact",
 	}).format(value);
+
+export const formatTextToHtml = (text: string): string => {
+	const escapeHtml = (unsafe: string) =>
+		unsafe
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#039;");
+
+	const escaped = escapeHtml(text);
+	const withLineBreaks = escaped.replace(/\n/g, "<br />");
+
+	return withLineBreaks;
+};

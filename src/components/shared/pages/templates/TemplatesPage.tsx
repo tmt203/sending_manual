@@ -192,6 +192,10 @@ const TemplatesPage = () => {
 						toast.error(t("error_message.duplicate_value", { data: body.name }));
 						return;
 					}
+					if (response.code === "ERR_TEMPLATE_PARAMS_DUPLICATE") {
+						toast.error(t("templates_page.error_message.template_params_duplicate"));
+						return;
+					}
 
 					toast.error(
 						t(`api.${selectedTemplate.id ? "update" : "create"}.failed`, { data: body.name })

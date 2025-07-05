@@ -8,10 +8,12 @@ import {
 	ZNSPreviewLight,
 } from "@/public/images";
 import { ZOA } from "@/public/svg";
+import { formatTextToHtml } from "@utils/format-value";
 import parse from "html-react-parser";
 import { LucideChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useMemo } from "react";
 
 export interface SMSReviewProps {
 	branchName?: string;
@@ -29,17 +31,17 @@ const SMSReview = ({ channel, branchName, messageContent, phoneNumber }: SMSRevi
 	// Hooks
 	const t = useTranslations();
 
+	const content = useMemo(() => {
+		messageContent = formatTextToHtml(messageContent ?? "");
+		return messageContent;
+	}, [messageContent]);
+
 	return (
 		<div className="relative mx-auto py-1">
 			{channel === "sms" ? (
 				<>
 					{/* Area: SMS Preview */}
-					<Image
-						priority
-						alt="sms-preview"
-						className="dark:hidden"
-						src={SMSPreviewLight}
-					/>
+					<Image priority alt="sms-preview" className="dark:hidden" src={SMSPreviewLight} />
 					<Image
 						priority
 						alt="sms-preview"
@@ -51,9 +53,9 @@ const SMSReview = ({ channel, branchName, messageContent, phoneNumber }: SMSRevi
 							{branchName}
 						</div>
 					)}
-					{messageContent && (
+					{content && (
 						<div className="absolute left-0 top-48 ml-5 mr-20 rounded-2xl bg-surface-500 dark:bg-surface-800">
-							<div className="relative px-3 py-2 text-base">{parse(messageContent)}</div>
+							<div className="relative px-3 py-2 text-base">{parse(content)}</div>
 							<Image
 								priority
 								alt="message-tail"
@@ -115,11 +117,11 @@ const SMSReview = ({ channel, branchName, messageContent, phoneNumber }: SMSRevi
 										</div>
 									</div>
 									{/* Area: Rendered content */}
-									{messageContent && (
+									{content && (
 										<div className="mb-10 flex w-[352px] flex-col rounded-xl bg-white py-3 dark:bg-surface-800">
 											<div className="px-3">
 												{/* Area: Notification card content */}
-												<div>{parse(messageContent)}</div>
+												<div>{parse(content)}</div>
 											</div>
 										</div>
 									)}
