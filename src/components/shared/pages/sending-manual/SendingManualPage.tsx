@@ -118,6 +118,7 @@ const SendingManualPage = () => {
 	const handleGetBrands = useCallback(async () => {
 		try {
 			const params: BrandQueryParams = {
+				limit: 9999,
 				channel: formik.values.channel,
 			};
 			const response = await apiGetBrands(params);

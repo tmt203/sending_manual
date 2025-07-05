@@ -94,8 +94,8 @@ const AddBrandModal = ({ isOpen, brand, setIsOpen, onSubmit }: AddBrandModalProp
 					placeholder={t("select.placeholder", { data: t("brands_page.channel").toLowerCase() })}
 					options={[
 						{ label: "SMS", value: "sms", noTranslate: true },
-						{ label: "ZNS", value: "zns", noTranslate: true },
-						{ label: "Email", value: "email", noTranslate: true },
+						// { label: "ZNS", value: "zns", noTranslate: true },
+						// { label: "Email", value: "email", noTranslate: true },
 					]}
 					value={formik.values.channel}
 					errorMessage={formik.errors.channel}
