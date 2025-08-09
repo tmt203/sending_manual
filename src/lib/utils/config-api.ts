@@ -24,7 +24,6 @@ const apiRequest = async <T>(method: ApiMethod, request: Request) => {
 	const { url, body, params } = request;
 	const headers: Record<string, string> = {
 		"Content-Type": "application/json",
-		"ngrok-skip-browser-warning": "true",
 	};
 
 	const queryParam =
