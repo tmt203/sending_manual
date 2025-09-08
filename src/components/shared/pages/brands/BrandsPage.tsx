@@ -99,6 +99,7 @@ const BrandsPage = () => {
 	const [addBrandModalOpen, setAddBrandModalOpen] = useState<boolean>(false);
 	const [notSelectedBrands, setNotSelectedBrands] = useState<TableRow[]>([]);
 	const [deleteBrandModalOpen, setDeleteBrandModalOpen] = useState<boolean>(false);
+	const [tableColumns, setTableColumns] = useState<TableColumn<TableRow>[]>(TABLE_BRANDS_COLUMN);
 
 	// Memoized
 	const filters = useMemo(() => BRAND_FILTERS, []);
@@ -241,6 +242,21 @@ const BrandsPage = () => {
 		}
 	}, [selectedBrand]);
 
+	/**
+	 * Handle hide column
+	 * @param columnKey string
+	 */
+	const handleHideColumn = useCallback(
+		(columnKey: string) => () => {
+			setTableColumns((prevColumns) =>
+				prevColumns.map((column) =>
+					column.key === columnKey ? { ...column, isHidden: !column.isHidden } : column
+				)
+			);
+		},
+		[setTableColumns]
+	);
+
 	useEffect(() => {
 		handleGetBrands();
 	}, [page, pageSize, params]);
@@ -310,7 +326,7 @@ const BrandsPage = () => {
 					pageSize={pageSize}
 					totalItem={totalItem}
 					isLoading={isLoading}
-					columns={TABLE_BRANDS_COLUMN}
+					columns={tableColumns}
 					selectedList={selectedBrands}
 					notSelectedList={notSelectedBrands}
 					selectedAll={isSelectAll}
@@ -331,6 +347,7 @@ const BrandsPage = () => {
 					onSelectRow={setSelectedBrands}
 					onSelectAll={handleSelectedAll}
 					onDeselectRow={setNotSelectedBrands}
+					onHideColumn={handleHideColumn}
 				/>
 
 				{/* Area: Pagination */}

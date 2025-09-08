@@ -250,32 +250,38 @@ const TableBody = <T extends TableRow>({
 						</td>
 					)}
 					{/*Area: Display Data Row Cell*/}
-					{columns.map((col, colIndex) => (
-						<Fragment key={`table-${id}-row-${colIndex}-col-${col.key}`}>
-							<td
-								className={clsx("whitespace-nowrap px-2 py-2 first:pl-5 last:pr-5", col.cellClass)}
-							>
-								{col.textEllipsis ? (
-									<Tooltip
-										content={col.dataFormat ? col.dataFormat(row) : renderCellValue(col, row)}
+					{columns.map(
+						(col, colIndex) =>
+							!col.isHidden && (
+								<Fragment key={`table-${id}-row-${colIndex}-col-${col.key}`}>
+									<td
+										className={clsx(
+											"whitespace-nowrap px-2 py-2 first:pl-5 last:pr-5",
+											col.cellClass
+										)}
 									>
-										<DataCell
-											textEllipsis
-											keyCell={col.key}
-											isLoading={isLoading}
-											value={col.dataFormat ? col.dataFormat(row) : renderCellValue(col, row)}
-										/>
-									</Tooltip>
-								) : (
-									<DataCell
-										keyCell={col.key}
-										isLoading={isLoading}
-										value={col.dataFormat ? col.dataFormat(row) : renderCellValue(col, row)}
-									/>
-								)}
-							</td>
-						</Fragment>
-					))}
+										{col.textEllipsis ? (
+											<Tooltip
+												content={col.dataFormat ? col.dataFormat(row) : renderCellValue(col, row)}
+											>
+												<DataCell
+													textEllipsis
+													keyCell={col.key}
+													isLoading={isLoading}
+													value={col.dataFormat ? col.dataFormat(row) : renderCellValue(col, row)}
+												/>
+											</Tooltip>
+										) : (
+											<DataCell
+												keyCell={col.key}
+												isLoading={isLoading}
+												value={col.dataFormat ? col.dataFormat(row) : renderCellValue(col, row)}
+											/>
+										)}
+									</td>
+								</Fragment>
+							)
+					)}
 
 					{showActionColumn && (
 						<td className="w-12 whitespace-nowrap px-2 py-2">

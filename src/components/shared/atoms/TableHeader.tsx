@@ -157,8 +157,9 @@ const TableHeader = <T,>({
 												{handleHideColumn && (
 													<MenuItem key="hide">
 														<button
+															key={column.label}
 															className="group flex w-full items-center gap-2 rounded-md px-3 py-1.5 data-[focus]:bg-white/10"
-															onClick={handleHideColumn(column.label)}
+															onClick={handleHideColumn(column.key)}
 														>
 															<EyeOff className="size-4 fill-white/30" />
 															{t("table.hide_column")}
@@ -220,12 +221,15 @@ const TableHeader = <T,>({
 																<button
 																	key={column.label}
 																	className="group flex w-full items-center gap-2 rounded-md px-3 py-1.5 data-[focus]:bg-white/10"
+																	onClick={handleHideColumn?.(column.key)}
 																>
 																	<div className="flex w-full justify-between">
-																		<div>{column.label}</div>
-																		<div>
-																			<Check size={16} />
-																		</div>
+																		<div>{t(column.label)}</div>
+																		{!column.isHidden && (
+																			<div>
+																				<Check size={16} />
+																			</div>
+																		)}
 																	</div>
 																</button>
 															))}
